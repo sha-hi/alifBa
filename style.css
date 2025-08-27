@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fefce8;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  font-size: 15px;
+  color: #333;
+}
+
+.letter-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.letter {
+  font-size: 36px;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #e0f2fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  user-select: none;
+  font-weight: bold;
+}
+
+.letter:hover {
+  transform: scale(1.1);
+}
+
+.selected-box {
+  border: 2px dashed #888;
+  padding: 20px;
+  border-radius: 15px;
+  min-height: 80px;
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.reset-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f43f5e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.score, .timer {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.score { color: #10b981; }
+.timer { color: #2563eb; }
