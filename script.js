@@ -38,7 +38,7 @@
       tile.className = 'letter';
       tile.textContent = letter;
       tile.style.backgroundColor = colors[idx % colors.length];
-      tile.tabIndex = 0; // for keyboard navigation
+      tile.tabIndex = 0; 
 
       tile.addEventListener('click', () => handleLetterClick(tile, letter));
       tile.addEventListener('keydown', (e) => {
@@ -68,7 +68,7 @@
       currentIndex++;
       score++;
     } else {
-      score = Math.max(0, score - 1); // prevent negative scores
+      score = Math.max(0, score - 1);
       tile.style.backgroundColor = '#fecaca';
       tile.style.transform = 'scale(1.2)';
       setTimeout(() => tile.style.transform = 'scale(1)', 200);

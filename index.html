@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ترتيب الحروف العربية</title>
+  <title>letters</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- defer guarantees the JS runs after HTML is parsed -->
   <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>എത്ര സമയം എടുക്കും എന്ന് നമ്മുക്ക് നോക്കാം</h1>
+  <header>
+    <h1>letter arrangement game</h1>
+    <div class="timer" id="timer" aria-live="polite">time: 0 ثانية</div>
+    <div class="score" id="score">score: 0</div>
+  </header>
 
-  <div class="timer" id="timer" aria-live="polite">الوقت: 0 ثانية</div>
-  <div class="score" id="score">النتيجة: 0</div>
+  <main>
+    <section class="letter-box" id="letterBox" role="region" aria-label="الحروف المتاحة"></section>
 
-  <div class="letter-box" id="letterBox"></div>
+    <h2>selected letters:</h2>
+    <section class="selected-box" id="selectedBox" role="region" aria-label="selected letters"></section>
 
-  <h2>الحروف المختارة:</h2>
-  <div class="selected-box" id="selectedBox"></div>
-
-  <button class="reset-btn" id="resetBtn" type="button">إعادة</button>
+    <button class="reset-btn" id="resetBtn" type="button">agian</button>
+  </main>
 </body>
 </html>

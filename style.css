@@ -6,25 +6,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   min-height: 100vh;
 }
 
 h1, h2 {
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #333;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 20px;
 }
 
 .letter-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 30px;
 }
 
 .letter {
-  font-size: 36px;
+  font-size: 2rem;
   width: 60px;
   height: 60px;
   border-radius: 10px;
@@ -33,13 +37,13 @@ h1, h2 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
   user-select: none;
   font-weight: bold;
 }
 
-.letter:hover {
-  transform: scale(1.1);
+.letter:focus {
+  outline: 3px solid #2563eb;
 }
 
 .selected-box {
@@ -51,7 +55,7 @@ h1, h2 {
   max-width: 600px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
   justify-content: center;
   background-color: #fff;
   margin-bottom: 20px;
@@ -66,10 +70,15 @@ h1, h2 {
   background-color: #f43f5e;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reset-btn:hover {
+  background-color: #e11d48;
 }
 
 .score, .timer {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
