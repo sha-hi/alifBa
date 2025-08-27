@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أعلى اللاعبين</title>
+  <link rel="stylesheet" href="welcome.css">
+  <link rel="stylesheet" href="top-scorers.css">
+</head>
+<body>
+  <div class="container">
+    <h1>أعلى اللاعبين حتى الآن</h1>
+
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th>الرتبة</th>
+          <th>الاسم</th>
+          <th>النقاط</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ali</td>
+          <td>95</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Fatima</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hassan</td>
+          <td>85</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="nextBtn">التالي</button>
+  </div>
+
+  <script>
+    const nextBtn = document.getElementById('nextBtn');
+    nextBtn.addEventListener('click', () => {
+      // replace with your next page
+      window.location.href = 'greet.html';
+    });
+  </script>
+</body>
+</html>

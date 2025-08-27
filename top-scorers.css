@@ -1,0 +1,30 @@
+/* table styling */
+.score-table {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  border-collapse: collapse;
+  font-size: 18px;
+  color: #333;
+}
+
+.score-table th, .score-table td {
+  border: 1px solid #888;
+  padding: 10px;
+  text-align: center;
+}
+
+.score-table th {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+.score-table tr:nth-child(even) {
+  background-color: #f2e6ff;
+}
+
+.score-table tr:nth-child(odd) {
+  background-color: #e6ccff;
+}
+
+/* reuse existing button styles from welcome.css */
