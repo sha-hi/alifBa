@@ -1,5 +1,5 @@
 body {
-  background-color: #e6ccff;
+  background-color: #e6ccff; /* light purple */
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@ body {
 
 .container {
   text-align: center;
-  background: #fff;
+  background: #fff; /* card effect */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -42,7 +42,7 @@ input {
 button {
   padding: 12px 25px;
   font-size: 16px;
-  background-color: #4f46e5;
+  background-color: #4f46e5; /* blue */
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -51,11 +51,5 @@ button {
 }
 
 button:hover {
-  background-color: #30a334;
-}
-
-.error {
-  color: red;
-  font-weight: bold;
-  margin-top: 5px;
+  background-color: #30a334; /* green on hover */
 }
