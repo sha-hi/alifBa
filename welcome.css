@@ -1,0 +1,42 @@
+body {
+  background-color: #e6ccff; /* light purple */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: blue;
+  margin-bottom: 20px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  color: blue;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4f46e5; /* nice blue button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3730a3;
+}
