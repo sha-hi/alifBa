@@ -1,4 +1,3 @@
-/* table styling */
 .score-table {
   width: 100%;
   max-width: 400px;
@@ -27,4 +26,11 @@
   background-color: #e6ccff;
 }
 
-/* reuse existing button styles from welcome.css */
+.score-table tr.current-user {
+  background-color: #ffd700;
+  font-weight: bold;
+}
+
+.table-container {
+  overflow-x: auto;
+}

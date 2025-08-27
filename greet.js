@@ -1,11 +1,12 @@
 const greeting = document.getElementById('greeting');
-const name = sessionStorage.getItem('userName') || 'ضيف';
-greeting.textContent = `Assalamu alikum ${name}`;
 const nextBtn = document.getElementById('nextBtn');
 
-if (nextBtn) {
-  nextBtn.addEventListener('click', () => {
-    const manId = document.getElementById('manId').value; // optional
-    window.location.href = `top-scorers.html?manId=${manId}`;
-  });
-}
+const name = sessionStorage.getItem('userName') || 'Guest';
+const place = sessionStorage.getItem('userPlace') || '';
+
+greeting.textContent = place ? `Assalamu alikum ${name} from ${place}!` : `Assalamu alikum ${name}!`;
+
+nextBtn.addEventListener('click', () => {
+  const manId = document.getElementById('manId').value || '0000';
+  window.location.href = 'top-scorers.html';
+});

@@ -1,5 +1,5 @@
 body {
-  background-color: #e6ccff; /* light purple */
+  background-color: #e6ccff;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -10,33 +10,52 @@ body {
 
 .container {
   text-align: center;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
   color: blue;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
   margin-bottom: 20px;
+  font-size: 20px;
 }
 
 input {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
   font-size: 18px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #888;
   color: blue;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #4f46e5; /* nice blue button */
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #4f46e5;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #3730a3;
+  background-color: #30a334;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 5px;
 }
