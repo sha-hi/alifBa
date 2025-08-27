@@ -1,4 +1,3 @@
-// Run after HTML is parsed because of "defer"
 (() => {
   const correctOrder = [
     'ا','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','ه','و','ي'
@@ -21,7 +20,6 @@
   const timerEl = document.getElementById('timer');
   const resetBtn = document.getElementById('resetBtn');
 
-  // Fisher–Yates shuffle (unbiased)
   function shuffle(array) {
     const arr = array.slice();
     for (let i = arr.length - 1; i > 0; i--) {
@@ -40,34 +38,48 @@
       tile.className = 'letter';
       tile.textContent = letter;
       tile.style.backgroundColor = colors[idx % colors.length];
-      tile.addEventListener('click', () => handleLetterClick(tile, letter), { once: false });
+      tile.tabIndex = 0; // for keyboard navigation
+
+      tile.addEventListener('click', () => handleLetterClick(tile, letter));
+      tile.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleLetterClick(tile, letter);
+        }
+      });
+
       letterBox.appendChild(tile);
     });
   }
 
   function handleLetterClick(tile, letter) {
-    if (currentIndex === 0 && startTime === 0) startTimer();
+    if (!timerInterval) startTimer();
 
     if (letter === correctOrder[currentIndex]) {
-      // correct pick
       const clone = tile.cloneNode(true);
+      clone.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+      clone.style.transform = 'scale(1.2)';
       clone.onclick = null;
+
       selectedBox.appendChild(clone);
+      setTimeout(() => clone.style.transform = 'scale(1)', 50);
+
       tile.style.visibility = 'hidden';
       currentIndex++;
       score++;
     } else {
-      // wrong pick
-      score--;
+      score = Math.max(0, score - 1); // prevent negative scores
       tile.style.backgroundColor = '#fecaca';
+      tile.style.transform = 'scale(1.2)';
+      setTimeout(() => tile.style.transform = 'scale(1)', 200);
     }
 
     updateScore();
 
     if (currentIndex === correctOrder.length) {
       stopTimer();
-      // optional: prevent any more clicks doing anything
       Array.from(letterBox.children).forEach(el => el.style.pointerEvents = 'none');
+      setTimeout(() => alert(`مبروك! انتهيت في ${Math.floor((Date.now() - startTime) / 1000)} ثانية.`), 200);
     }
   }
 
@@ -78,7 +90,7 @@
   function startTimer() {
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 1000);
-    updateTimer(); // reflect immediately
+    updateTimer();
   }
 
   function updateTimer() {
@@ -104,9 +116,7 @@
     renderLetters();
   }
 
-  // hook up the reset button without inline JS
   resetBtn.addEventListener('click', resetSelection);
 
-  // initial render
   renderLetters();
 })();
